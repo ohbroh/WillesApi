@@ -1,0 +1,52 @@
+﻿@model IEnumerable<TodoApi.Models.TodoItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Artister</h1>
+
+<p>
+    <a asp-action="PostArtist">Lägg till ny artist</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Artist_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Namn_Artist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lot_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skivbolag)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artist_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Namn_Artist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lot_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skivbolag)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "PutArtist", new {  /*id=item.Artist_ID */ }) |
+                @Html.ActionLink("Delete", "DeleteArtist", new { id = item.Artist_ID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

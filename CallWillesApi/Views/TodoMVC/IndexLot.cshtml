@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TodoApi.Models.TodoItemLot>
+
+@{
+    ViewData["Title"] = "IndexLot";
+}
+
+<h1>IndexLot</h1>
+
+<p>
+    <a asp-action="PostLot">Lägg till ny låt</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lot_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Namn_Lot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artist_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Spelningar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skivbolag)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lot_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Namn_Lot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artist_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spelningar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skivbolag)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "PutLot", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "DeleteLot", new {  id=item.Lot_ID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

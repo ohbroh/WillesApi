@@ -1,0 +1,35 @@
+﻿@model TodoApi.Models.TodoItemSkivbolag
+
+@{
+    ViewData["Title"] = "PutSkivbolag";
+}
+
+<h1>PutSkivbolag</h1>
+
+<h4>TodoItemSkivbolag</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PutSkivbolag">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Skivbolag_ID" class="control-label"></label>
+                <input asp-for="Skivbolag_ID" class="form-control" />
+                <span asp-validation-for="Skivbolag_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Namn" class="control-label"></label>
+                <input asp-for="Namn" class="form-control" />
+                <span asp-validation-for="Namn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="IndexSkivbolag">Back to List</a>
+</div>
+

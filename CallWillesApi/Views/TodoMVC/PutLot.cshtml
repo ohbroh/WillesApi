@@ -1,0 +1,50 @@
+﻿@model TodoApi.Models.TodoItemLot
+
+@{
+    ViewData["Title"] = "PutLot";
+}
+
+<h1>PutLot</h1>
+
+<h4>TodoItemLot</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PutLot">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Lot_ID" class="control-label"></label>
+                <input asp-for="Lot_ID" class="form-control" />
+                <span asp-validation-for="Lot_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Namn_Lot" class="control-label"></label>
+                <input asp-for="Namn_Lot" class="form-control" />
+                <span asp-validation-for="Namn_Lot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Artist_ID" class="control-label"></label>
+                <input asp-for="Artist_ID" class="form-control" />
+                <span asp-validation-for="Artist_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Spelningar" class="control-label"></label>
+                <input asp-for="Spelningar" class="form-control" />
+                <span asp-validation-for="Spelningar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Skivbolag" class="control-label"></label>
+                <input asp-for="Skivbolag" class="form-control" />
+                <span asp-validation-for="Skivbolag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="IndexLot">Back to List</a>
+</div>
+

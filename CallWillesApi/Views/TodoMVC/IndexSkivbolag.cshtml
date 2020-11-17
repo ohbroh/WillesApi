@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TodoApi.Models.TodoItemSkivbolag>
+
+@{
+    ViewData["Title"] = "IndexSkivolag";
+}
+
+<h1>IndexSkivolag</h1>
+
+<p>
+    <a asp-action="PostSkivbolag">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Skivbolag_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Namn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skivbolag_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Namn)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "PutSkivbolag", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "DeleteSkivbolag", new { id=item.Skivbolag_ID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
